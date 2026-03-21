@@ -1,0 +1,38 @@
+.header {
+    background: #000;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    /* 追加 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+
+
+/* ログアウトボタン */
+.header__logout {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ホバー */
+.header__logout:hover {
+    background: #ddd;
+}
