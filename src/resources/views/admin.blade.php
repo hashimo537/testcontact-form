@@ -1,27 +1,5 @@
 @extends('layouts.admin-app')
-<style>
-  th {
-    background-color: #289ADC;
-    color: white;
-    padding: 5px 40px;
-  }
 
-  tr:nth-child(odd) td {
-    background-color: #FFFFFF;
-  }
-
-  td {
-    padding: 25px 40px;
-    background-color: #EEEEEE;
-    text-align: center;
-  }
-
-  svg.w-5.h-5 {
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
-    width: 30px;
-    height: 30px;
-  }
-</style>
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -78,7 +56,7 @@
 <tr>
 <th>お名前</th>
 <th>性別</th>
-<th>メール</th>
+<th>メールアドレス</th>
 <th>お問い合わせ種類</th>
 <th></th>
 </tr>
@@ -107,34 +85,50 @@
 
 </tr>
 
-@endforeach
-
-</table>
-
 <!-- モーダル -->
 
-<div id="modal" style="display:none">
+<input type="checkbox" id="modal-{{ $contact->id }}" class="modal-toggle">
 
-<div class="modal-content">
+    <div class="modal">
 
-<h2>お問い合わせ詳細</h2>
+        <div class="modal-content">
 
-<p>名前：<span id="modal-name"></span></p>
-<p>メール：<span id="modal-email"></span></p>
+            <label for="modal-{{ $contact->id }}" class="modal-close">×</label>
 
-<form id="delete-form" method="POST">
-@csrf
-@method('DELETE')
+        <h2>お問い合わせ詳細</h2>
 
-<button type="submit">削除</button>
+        <p>お名前：{{ $contact->first_name }} {{ $contact->last_name }}</p>
 
-</form>
+        <p>性別：
+        @if($contact->gender == 1)
+        男性
+        @elseif($contact->gender == 2)
+        女性
+        @else
+        その他
+        @endif
+        </p>
 
-<button onclick="closeModal()">閉じる</button>
+        <p>メールアドレス：{{ $contact->email }}</p>
+        <p>電話番号：{{ $contact->tel }}</p>
+        <p>住所：{{ $contact->address }}</p>
+        <p>建物名：{{ $contact->building }}</p>
+        <p>お問い合わせの種類：{{ $contact->category->content }}</p>
+        <p>お問い合わせ内容：{{ $contact->detail }}</p>
 
-</div>
+        <form action="/delete/{{ $contact->id }}" method="POST">
+        @csrf
+        @method('DELETE')
 
-</div>
+        <button type="submit">削除</button>
 
+        </form>
+
+
+        </div>
+    </div>
+
+@endforeach
+</table>
 
 @endsection
