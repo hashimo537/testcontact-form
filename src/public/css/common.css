@@ -1,5 +1,6 @@
 .header {
-    background: #000;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .header__inner {
@@ -8,17 +9,29 @@
     max-width: 1230px;
     /* 追加 */
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 }
 
 .header__logo {
-    color: #fff;
-    text-decoration: none;
+    color: #897765;
+    font-family: "Gorditas", serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
+    text-decoration:none;
 }
 
+.header-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.header-nav__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
 
 

@@ -23,19 +23,24 @@ class ContactRequest extends FormRequest
      */
 
     public function rules()
-    {
-        return [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'gender' => ['required', 'in:1,2,3'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'tel' => ['required', 'digits_between:10,11'],
-            'address' => ['required', 'string', 'max:255'],
-            'building' => ['nullable', 'string', 'max:255'],
-            'category_id' => ['required', 'exists:categories,id'],
-            'detail' => ['required', 'string'],
-        ];
-    }
+{
+    return [
+        'first_name' => ['required', 'string', 'max:255'],
+        'last_name' => ['required', 'string', 'max:255'],
+        'gender' => ['required', 'in:1,2,3'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+
+        'tel1' => ['required','numeric','digits_between:2,4'],
+        'tel2' => ['required','numeric','digits_between:2,4'],
+        'tel3' => ['required','numeric','digits_between:3,4'],
+
+        'address' => ['required', 'string', 'max:255'],
+        'building' => ['nullable', 'string', 'max:255'],
+
+        'category_id' => ['required', 'exists:categories,id'],
+        'detail' => ['required', 'string'],
+    ];
+}
 
     public function messages()
     {
@@ -49,8 +54,13 @@ class ContactRequest extends FormRequest
         'email.required' => 'メールアドレスを入力してください',
         'email.email' => '有効なメールアドレス形式で入力してください',
 
-        'tel.required' => '電話番号を入力してください',
-        'tel.digits_between' => '電話番号は10桁または11桁で入力してください',
+        'tel1.required' => '電話番号を入力してください',
+        'tel2.required' => '電話番号を入力してください',
+        'tel3.required' => '電話番号を入力してください',
+
+        'tel1.numeric' => '電話番号は数字で入力してください',
+        'tel2.numeric' => '電話番号は数字で入力してください',
+        'tel3.numeric' => '電話番号は数字で入力してください',
 
         'address.required' => '住所を入力してください',
 

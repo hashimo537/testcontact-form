@@ -11,7 +11,7 @@
 <h1>Admin</h1>
 
 <!-- 検索フォーム -->
-<form method="GET" action="/admin">
+<form method="GET" action="/admin" class="search-form">
 
 <input type="text" name="keyword" placeholder="名前やメールアドレス">
 

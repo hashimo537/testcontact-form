@@ -8,7 +8,6 @@
   <title>TestContact Form</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
-
   @yield('css')
 </head>
 
@@ -17,7 +16,7 @@
   <header class="header">
     <div class="header__inner">
       <a class="header__logo" href="/">
-        Fashionably Late
+        FashionablyLate
       </a>
     </div>
   </header>

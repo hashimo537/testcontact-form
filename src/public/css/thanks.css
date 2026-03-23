@@ -1,27 +1,42 @@
-.header {
-    background: #000;
+.thanks__content {
+    position: relative;
+    text-align: center;
+    margin-top: 120px;
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+/* 背景Thank you */
+
+.thanks__background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 280px;
+    font-weight: bold;
+    font-family: "Gorditas", serif;
+
+    color: #f5f5f5;
+    white-space: nowrap;
+
+    z-index: -1;
 }
 
-.header__logo {
+/* メッセージ */
+
+.thanks__message p {
+    font-size: 20px;
+    color: #897765;
+    margin-bottom: 40px;
+}
+
+/* ボタン */
+
+.thanks__button {
+    display: inline-block;
+    width: 120px;
+    padding: 10px;
+    background: #897765;
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.thanks__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-}
-
-.thanks__heading {
-    margin-bottom: 40px;
-    text-align: center;
 }

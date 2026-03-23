@@ -1,39 +1,68 @@
+body {
+    color: #897765;
+    background: #fff;
+}
+
+::placeholder {
+    color: #b1a295;
+}
+
+/* 全体 */
+
 .contact-form__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 40px 15px;
     max-width: 1230px;
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    font-family: "Gorditas", serif;
+    margin-bottom: 50px;
     text-align: center;
 }
+
+.contact-form__heading h2 {
+    font-size: 28px;
+}
+
+/* フォーム */
 
 .form {
     margin: 0 auto;
     width: 70%;
-    text-align: center;
 }
 
 .form__group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    align-items: center;
+    margin-bottom: 25px;
 }
+
+.form__group-title {
+    width: 250px;
+}
+
+.form__group-content {
+    flex: 1;
+}
+
+/* 必須 */
 
 .form__label--required {
     margin-left: 5px;
-    padding: 4px 6px;
-    border-radius: 3px;
-    background: #fafafa;
-    color: #aaa;
+    color: #ff6b6b;
+    font-weight: bold;
 }
+
+/* エラー */
 
 .form__error {
     height: 20px;
-    color: #ff0000;
-    text-align: left;
+    color: #ff6b6b;
+    font-size: 14px;
 }
+
+/* 入力欄 */
 
 .form__input--text input,
 .form__input--textarea textarea {
@@ -41,8 +70,7 @@
     width: 600px;
     border: 1px solid #ddd;
     border-radius: 3px;
-
-    appearance: none;
+    background: #f5f5f5;
 }
 
 .form__input--text input {
@@ -53,17 +81,96 @@
     height: 180px;
 }
 
+/* 名前 */
+
+.form__input--name {
+    display: flex;
+    gap: 20px;
+}
+
+.form__input--name input {
+    width: 290px;
+}
+
+/* radio */
+
+.form__input--radio {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+input[type="radio"] {
+    accent-color: #897765;
+}
+
+/* 電話番号 */
+
+.form__input--tel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 600px;
+}
+
+.form__input--tel input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+/* select */
+
+.form__input--select {
+    position: relative;
+    width: 300px;
+}
+
+.form__input--select select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    padding-right: 35px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #f5f5f5;
+    color: #b1a295;
+    appearance: none;
+}
+
+.form__input--select::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b1a295;
+    pointer-events: none;
+}
+
+/* ボタン */
+
 .form__button {
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
+    width: 200px;
     height: 50px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    border-radius: 5px;
+    background: #897765;
     color: #fff;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.form__button-submit:hover {
+    opacity: 0.9;
 }
