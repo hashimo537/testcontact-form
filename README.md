@@ -39,4 +39,4 @@ php artisan key:generate
 
 ## ER図
 
-![ER図](docs/er_diawio.png)
+![ER図](/docs/er_drawio.png)
