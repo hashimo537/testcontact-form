@@ -5,28 +5,20 @@
 Dockerビルド
 ・git clone git@github.com:hashimo537/testcontact-form.git
 
-Larabel環境構築
+## 環境構築手順
 ・docker-compose exec php bash
 ・composer install
 ・cp .env.example .env、環境変数を適宜変更
 ・php artisan key:generate
 ・php artisan migrate
 ・php artisan db:seed
+・docker-compose.ymlのmysql部分へplatform: linux/amd64追加
 
 環境構築
 ・お問い合わせ画面：http://localhost
 ・ユーザー登録：http://localhost/admin
 ・phpMyAdmin:http://localhost:8080/
 
-## 環境構築手順
-
-git clone後は以下のコマンドを実行してください。
-
-docker-compose up -d --build
-docker-compose exec php bash
-composer install
-cp .env.example .env
-php artisan key:generate
 
 ## 使用技術(実行環境)
 
