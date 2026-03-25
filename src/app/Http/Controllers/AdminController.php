@@ -13,11 +13,12 @@ class AdminController extends Controller
         $query = Contact::query();
 
         if ($request->keyword) {
-            $query->where(function ($q) use ($request) {
-                $q->where('name', 'like', "%{$request->keyword}%")
-                  ->orWhere('email', 'like', "%{$request->keyword}%");
-            });
-        }
+    $query->where(function ($q) use ($request) {
+        $q->where('first_name', 'like', "%{$request->keyword}%")
+          ->orWhere('last_name', 'like', "%{$request->keyword}%")
+          ->orWhere('email', 'like', "%{$request->keyword}%");
+    });
+}
 
         if ($request->gender) {
             $query->where('gender', $request->gender);
@@ -31,7 +32,7 @@ class AdminController extends Controller
             $query->whereDate('created_at', $request->date);
         }
 
-        $contacts = $query->paginate(7);
+        $contacts = $query->paginate(7)->appends($request->query());
 
         $categories = Category::all();
 

@@ -7,30 +7,37 @@
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
-    /* 追加 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .header__logo {
-    color: #897765;
-    font-family: "Gorditas", serif;
-    font-weight: bold;
-    font-size: 32px;
-    text-decoration:none;
+    color: #8b7969;
+
+    font-family: "Gorditas",serif;
+
+    font-size: 36px;
+
+    text-decoration: none;
 }
 
 .header-nav {
+    position: absolute;
+    right: 20px;
     display: flex;
-    gap: 20px;
     list-style: none;
 }
 
-.header-nav__button {
-    background: none;
-    border: none;
+.header-button {
+    background: #edeae6;
+    color: #8b7969;
+    border: 1px solid #d9c6b5;
+    padding: 8px 20px;
     cursor: pointer;
+    text-decoration: none;
+    font-family: "Gorditas", serif;
 }
 
 
@@ -44,6 +51,15 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+/* 
+.header-nav__item
+        background: #fff;
+        color: #000;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-weight: bold; */
 
 /* ホバー */
 .header__logout:hover {

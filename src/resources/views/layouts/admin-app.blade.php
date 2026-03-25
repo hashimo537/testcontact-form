@@ -28,33 +28,29 @@
       <!-- ログインしている場合 -->
       @if (Auth::check())
 
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="/mypage">マイページ</a>
-      </li>
+        <li class="header-nav__item">
+          <form action="/logout" method="post">
+            @csrf
+            <button class="header-button">Logout</button>
+          </form>
+        </li>
 
-      <li class="header-nav__item">
-        <form action="/logout" method="post">
-          @csrf
-          <button class="header-nav__button">ログアウト</button>
-        </form>
-      </li>
+        <!-- ログインしていない場合 -->
+        @else
 
-      <!-- ログインしていない場合 -->
-      @else
+        @if(request()->is('login'))
+          <li class="header-nav__item">
+            <a class="header-button" href="/register">Register</a>
+          </li>
+        @endif
 
-      @if(request()->is('login'))
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="/register">会員登録</a>
-      </li>
+        @if(request()->is('register'))
+          <li class="header-nav__item">
+              <a class="header-button" href="/login">Login</a>
+          </li>
       @endif
 
-      @if(request()->is('register'))
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="/login">ログイン</a>
-      </li>
-      @endif
-
-      @endif
+    @endif
 
     </ul>
 
