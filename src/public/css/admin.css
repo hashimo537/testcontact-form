@@ -104,6 +104,7 @@ h1 {
     color:#8b7969;
     border: none;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
 .pagination nav {

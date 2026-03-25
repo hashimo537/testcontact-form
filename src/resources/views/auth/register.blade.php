@@ -13,30 +13,30 @@
   </div>
 
   <form class="form" action="/register" method="post">
-  @csrf
+    @csrf
 
     <div class="form__group">
       <span class="form__label--item">お名前</span>
-      <div class="form__input--text">
-        <input type="text" name="name" value="{{ old('name') }}" placeholder="例：山田 太郎">
-      </div>
-      <div class="form__error">
-        @error('name')
-        {{ $message }}
-        @enderror
-      </div>
+        <div class="form__input--text">
+          <input type="text" name="name" value="{{ old('name') }}" placeholder="例：山田 太郎">
+        </div>
+        <div class="form__error">
+          @error('name')
+          {{ $message }}
+          @enderror
+        </div>
     </div>
 
     <div class="form__group">
       <span class="form__label--item">メールアドレス</span>
-      <div class="form__input--text">
-        <input type="email" name="email" value="{{ old('email') }}" placeholder="例：test@example.com">
-      </div>
-      <div class="form__error">
-        @error('email')
-        {{ $message }}
-        @enderror
-      </div>
+        <div class="form__input--text">
+          <input type="email" name="email" value="{{ old('email') }}" placeholder="例：test@example.com">
+        </div>
+        <div class="form__error">
+          @error('email')
+          {{ $message }}
+          @enderror
+        </div>
     </div>
 
     <div class="form__group">
