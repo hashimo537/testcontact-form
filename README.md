@@ -3,8 +3,7 @@
 ##　環境構築
 
 Dockerビルド
-・git clone git@github.com:Estra-Coachtech/testcontact-form.git
-・docker-compose up -d --buiid
+・git clone git@github.com:hashimo537/testcontact-form.git
 
 Larabel環境構築
 ・docker-compose exec php bash
@@ -16,8 +15,18 @@ Larabel環境構築
 
 環境構築
 ・お問い合わせ画面：http://localhost
-・ユーザー登録：http://localhost
+・ユーザー登録：http://localhost/admin
 ・phpMyAdmin:http://localhost:8080/
+
+## 環境構築手順
+
+git clone後は以下のコマンドを実行してください。
+
+docker-compose up -d --build
+docker-compose exec php bash
+composer install
+cp .env.example .env
+php artisan key:generate
 
 ## 使用技術(実行環境)
 
@@ -27,3 +36,7 @@ Larabel環境構築
 ・nginx 1.21.1（Docker）
 
 ## ER図
+
+## ER図
+
+![ER図](docs/er_diawio.png)
