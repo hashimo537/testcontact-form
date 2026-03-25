@@ -19,6 +19,7 @@ placeholder="名前やメールアドレスを入力してください"
 value="{{ request('keyword') }}">
 
 <select name="gender">
+<option value="">性別</option>
 <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
 <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
 <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
@@ -66,35 +67,35 @@ value="{{ request('keyword') }}">
 <!-- 一覧テーブル -->
 <table>
 
-<tr>
-<th>お名前</th>
-<th>性別</th>
-<th>メールアドレス</th>
-<th>お問い合わせ種類</th>
-<th></th>
-</tr>
+    <tr>
+        <th>お名前</th>
+        <th>性別</th>
+        <th>メールアドレス</th>
+        <th>お問い合わせ種類</th>
+        <th></th>
+    </tr>
 
 @foreach($contacts as $contact)
 
 <tr>
-<td>{{ $contact->first_name }} {{ $contact->last_name }}</td>
+    <td>{{ $contact->first_name }} {{ $contact->last_name }}</td>
 
-<td>
-@if($contact->gender == 1) 男性
-@elseif($contact->gender == 2) 女性
-@else その他
-@endif
-</td>
+    <td>
+        @if($contact->gender == 1) 男性
+            @elseif($contact->gender == 2) 女性
+            @else その他
+        @endif
+    </td>
 
-<td>{{ $contact->email }}</td>
+    <td>{{ $contact->email }}</td>
 
-<td>{{ $contact->category->content }}</td>
+    <td>{{ $contact->category->content }}</td>
 
-<td>
-<label for="modal-{{ $contact->id }}" class="detail-button">
-詳細
-</label>
-</td>
+    <td>
+        <label for="modal-{{ $contact->id }}" class="detail-button">
+        詳細
+        </label>
+    </td>
 
 </tr>
 
@@ -109,49 +110,49 @@ value="{{ request('keyword') }}">
             <label for="modal-{{ $contact->id }}" class="modal-close">×</label>
 
             <div class="modal-row">
-    <span class="modal-label">お名前</span>
-    <span class="modal-value">{{ $contact->first_name }} {{ $contact->last_name }}</span>
-</div>
+                <span class="modal-label">お名前</span>
+                <span class="modal-value">{{ $contact->first_name }} {{ $contact->last_name }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">性別</span>
-        <span class="modal-value">
-        @if($contact->gender == 1) 男性
-        @elseif($contact->gender == 2) 女性
-        @else その他
-        @endif
-        </span>
-    </div>
+            <div class="modal-row">
+                <span class="modal-label">性別</span>
+                <span class="modal-value">
+                    @if($contact->gender == 1) 男性
+                        @elseif($contact->gender == 2) 女性
+                        @else その他
+                    @endif
+                </span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">メールアドレス</span>
-    <span class="modal-value">{{ $contact->email }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">メールアドレス</span>
+                <span class="modal-value">{{ $contact->email }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">電話番号</span>
-    <span class="modal-value">{{ $contact->tel }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">電話番号</span>
+                <span class="modal-value">{{ $contact->tel }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">住所</span>
-    <span class="modal-value">{{ $contact->address }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">住所</span>
+                <span class="modal-value">{{ $contact->address }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">建物名</span>
-    <span class="modal-value">{{ $contact->building }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">建物名</span>
+                <span class="modal-value">{{ $contact->building }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">お問い合わせの種類</span>
-    <span class="modal-value">{{ $contact->category->content }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">お問い合わせの種類</span>
+                <span class="modal-value">{{ $contact->category->content }}</span>
+            </div>
 
-<div class="modal-row">
-    <span class="modal-label">お問い合わせ内容</span>
-    <span class="modal-value">{{ $contact->detail }}</span>
-</div>
+            <div class="modal-row">
+                <span class="modal-label">お問い合わせ内容</span>
+                <span class="modal-value">{{ $contact->detail }}</span>
+            </div>
 
             <form action="/delete/{{ $contact->id }}" method="POST">
                 @csrf

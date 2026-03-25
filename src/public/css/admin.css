@@ -209,7 +209,8 @@ td {
     background: white;
     width: 40%;
     margin: 120px auto;
-    padding: 40px;
+    padding: 80px;
+    position: relative;
 }
 
 .modal-toggle {
@@ -222,7 +223,11 @@ td {
 }
 
 .modal-close {
-    float: right;
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
     font-size: 18px;
 
     width: 35px;
@@ -234,6 +239,7 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
 
     cursor: pointer;
@@ -241,8 +247,7 @@ td {
 
 .delete-button {
     display: block;
-        margin: 40px auto;
-    
+        margin: 60px auto;
         background: #d9534f;
         color: white;
         border: none;

@@ -1,8 +1,17 @@
 .thanks__content {
     position: relative;
-    text-align: center;
-    margin-top: 120px;
-}
+    height: 100vh;
+        /* 画面の高さ */
+        display: flex;
+        flex-direction: column;
+    
+        justify-content: center;
+        /* 縦中央 */
+        align-items: center;
+        /* 横中央 */
+    
+        text-align: center;
+    }
 
 /* 背景Thank you */
 
@@ -25,9 +34,11 @@
 /* メッセージ */
 
 .thanks__message p {
-    font-size: 20px;
+    font-size: 30px;
     color: #897765;
     margin-bottom: 40px;
+    font-weight: bold;
+    
 }
 
 /* ボタン */

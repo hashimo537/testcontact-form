@@ -22,21 +22,23 @@
             <span class="form__label--required">※</span>
           </div>
             <div class="form__group-content">
-            <div class="form__input--text">
-              <input type="text" name="first_name" placeholder="テスト" value="{{ old('first_name') }}" />
+              <div class="form__input--name">
+                <div class="form__input--text">
+                  <input type="text" name="first_name" placeholder="例：山田" value="{{ old('first_name') }}" />
+                </div>
+                <div class="form__input--text">
+                  <input type="text" name="last_name" placeholder="例：太郎" value="{{ old('last_name') }}" />
+                </div>
+                <div class="form__error">
+                  @error('first_name')
+                  {{ $message }}
+                  @enderror
+                  @error('last_name')
+                  {{ $message }}
+                  @enderror
+                </div>
+              </div>
             </div>
-            <div class="form__input--text">
-              <input type="text" name="last_name" placeholder="太郎" value="{{ old('last_name') }}" />
-            </div>
-            <div class="form__error">
-                @error('first_name')
-                {{ $message }}
-                @enderror
-                @error('last_name')
-                {{ $message }}
-                @enderror
-            </div>
-          </div>
         </div>
 
         <!-- 性別 -->
@@ -80,7 +82,7 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
-              <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
+              <input type="email" name="email" placeholder="例：test@example.com" value="{{ old('email') }}" />
             </div>
             <div class="form__error">
                 @error('email')
