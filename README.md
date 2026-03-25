@@ -31,4 +31,4 @@ Dockerビルド
 
 ## ER図
 
-![ER図](/docs/er_drawio.png)
+![ER図](docs/er_drawio.png)
